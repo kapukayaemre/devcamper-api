@@ -38,6 +38,8 @@ exports.getBootcamp = asyncHandler(async (req, res, next) => {
 exports.createBootcamp = asyncHandler(async (req, res, next) => {
     const bootcamp = await Bootcamp.create(req.body);
 
+    console.log(process.env.GEOCODER_API_KEY);
+
     res.status(201).json({
         success: true,
         data: bootcamp
